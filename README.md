@@ -7,6 +7,15 @@
  - De game speed gaat omhoog
  - De ballen krijgen een nieuwe snelheid
 
+## HTML element uit DOM verwijderen
+
+```
+this.div = document.createElement("div")
+document.body.appendChild(this.div)
+
+this.div.remove()
+```
+
 ## Object uit array verwijderen
 
 ```
