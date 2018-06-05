@@ -1,4 +1,4 @@
-/// <reference path="paddle.ts"/>
+/// <reference path="game.ts"/>
 
 class Ball {
     

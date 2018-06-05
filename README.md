@@ -1,33 +1,54 @@
 # CMTTHE04 Week6 oefening 0
 
-## Objecten verwijderen
+Oefenen met het verwijderen van objecten. Je moet zowel het DOM element als de ball instance in de array verwijderen.
 
- - Maak de ball klikbaar
- - De game verwijdert de bal
- - De game speed gaat omhoog
- - De ballen krijgen een nieuwe snelheid
+## Ball klikbaar maken
 
-## HTML element uit DOM verwijderen
+ - De ball maakt zijn eigen div klikbaar met `addEventListener`. 
+ - De listener roept een `removeMe()` functie van de ball aan. Test of dit werkt met `console.log()`
+
+
+## Ball moet zijn Div element uit de DOM verwijderen
 
 ```
-this.div = document.createElement("div")
-document.body.appendChild(this.div)
-
 this.div.remove()
 ```
 
-## Object uit array verwijderen
+## De game moet de ball instance uit de array halen
+
+Dit is een lastige opgave, omdat de **ball** tegen de **game** moet zeggen dat hij verwijderd moet worden. Hieronder zie je de functie van game die een ball kan verwijderen:
+
+### Game verwijdert ball uit array
 
 ```
-public removeFromArray(removeMe: Apple) {
+public removeFromArray(removedBall: Ball) {
 
-    for (let i = 0;i< this.apples.length ;i++) {
+    for (let i = 0;i< this.balls.length ;i++) {
 
-        if (this.apples[i] === removeMe) {
+        if (this.balls[i] === removedBall) {
 
-            this.apples.splice(i, 1);
+            this.balls.splice(i, 1);
 
         }
+    }
+}
+```
+
+### Ball roept functie van game aan
+
+Omdat de ball een functie van de game moet aanroepen, moet de ball ook weten dat de game bestaat. In dit code voorbeeld zie je hoe we de game aan de ball doorgeven:
+
+**game.ts**
+```
+new Ball(this)
+```
+
+**ball.ts**
+```
+class Ball {
+    game:Game
+    constructor(g:Game){
+        this.game = g
     }
 }
 ```
