@@ -23,14 +23,9 @@ Dit is een lastige opgave, omdat de **ball** tegen de **game** moet zeggen dat h
 ```
 public removeFromArray(removedBall: Ball) {
 
-    for (let i = 0;i< this.balls.length ;i++) {
+    let i = this.balls.indexOf(removedBall)
+    this.balls.splice(i, 1);
 
-        if (this.balls[i] === removedBall) {
-
-            this.balls.splice(i, 1);
-
-        }
-    }
 }
 ```
 
