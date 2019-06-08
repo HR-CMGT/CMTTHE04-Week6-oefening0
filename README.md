@@ -7,39 +7,34 @@ Pak alle pokéballs op voordat de tijd op is! Oefenen met het verwijderen van ob
 
 ## Ball klikbaar maken
 
- - De ball maakt zijn eigen div klikbaar met `addEventListener`. 
- - De listener roept een `removeMe()` functie van de ball aan. Test of dit werkt met `console.log()`
-
+ - Voeg een `removeMe()` method toe aan de ball class. Zet hier een `console.log` in.
+ - De ball class maakt zijn eigen `div` klikbaar met een `addEventListener`. 
+ - Luister naar het `mouseDown` event, en roep dan de `removeMe()` method aan.
+ - Test of de console werkt als je op de bal klikt!
+ - Nu kan je verder met het verwijderen van de ball uit de DOM en uit de Array
 
 ## Ball moet na Click zijn Div element uit de DOM verwijderen
 
 ```
 this.div.remove()
 ```
+Let op, de ball instance zit nog wel in de array! Je hebt alleen het plaatje uit de HTML pagina verwijderd!
 
-## De game moet de ball instance uit de array halen
+## De ball uit de array halen
 
-Dit is een lastige opgave, omdat de **ball** tegen de **game** moet zeggen dat hij verwijderd moet worden. Hieronder zie je de functie van game die een ball kan verwijderen:
+Dit is een lastige opgave, omdat de **ball** tegen de **game** moet zeggen dat hij verwijderd moet worden. De opdracht bestaat dus uit twee delen:
 
-### Game verwijdert ball uit array
+- De ball moet de Game kunnen aanspreken
+- De game moet een specifieke ball uit `this.balls` kunnen verwijderen
 
-```
-public removeFromArray(removedBall: Ball) {
+Je kan beginnen met het aanmaken van een `removeBallFromArray()` method in de game class.
+Deze method verwacht een ball argument, dit is de ball die verwijderd moet worden: `removeBallFromArray(b:Ball)`
 
-    let i = this.balls.indexOf(removedBall)
-    this.balls.splice(i, 1);
+Probeer met onderstaande voorbeeldcode de opdracht af te maken:
 
-}
-```
+### Een functie in een andere class aanroepen
 
-### Ball roept functie van game aan
-
-Omdat de ball een functie van de game moet aanroepen, moet de ball ook weten dat de game bestaat. In dit code voorbeeld zie je hoe we de game aan de ball doorgeven:
-
-**game.ts**
-```
-new Ball(this)
-```
+Omdat de ball een functie van de game moet aanroepen, moet de ball ook weten dat de game bestaat. Je kan dit doen door de game via de constructor aan de ball te geven. Let op dat je bij het aanroepen van `new Ball()` hier gebruik van maakt!
 
 **ball.ts**
 ```
@@ -49,6 +44,16 @@ class Ball {
         this.game = g
     }
 }
+```
+
+### Object uit array verwijderen
+
+- Vind de plek van het object in een array
+- Gebruik `splice` om de array op die plek aan te passen:
+
+```
+let index = this.balls.indexOf(ball)
+this.balls.splice(index, 1);
 ```
 
 ## Array Explorer
