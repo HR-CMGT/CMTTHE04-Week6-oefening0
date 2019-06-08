@@ -6,7 +6,7 @@ class Game {
 
     constructor() {
 
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 25; i++) {
             this.balls.push(new Ball())
         }
 

@@ -1,8 +1,9 @@
 # CMTTHE04 Week6 oefening 1
 
-Pak alle pokéballs op voordat de tijd op is!
+Pak alle pokéballs op voordat de tijd op is! Oefenen met het verwijderen van objecten. Je moet zowel DOM elementen als instances verwijderen.
 
-Oefenen met het verwijderen van objecten. Je moet zowel DOM elementen als instances verwijderen.
+ - Start Typescript compilatie met CMD/CTRL + SHIFT + B
+ - Start de Live Server extensie of open je eigen localhost server
 
 ## Ball klikbaar maken
 
@@ -10,7 +11,7 @@ Oefenen met het verwijderen van objecten. Je moet zowel DOM elementen als instan
  - De listener roept een `removeMe()` functie van de ball aan. Test of dit werkt met `console.log()`
 
 
-## Ball moet zijn Div element uit de DOM verwijderen
+## Ball moet na Click zijn Div element uit de DOM verwijderen
 
 ```
 this.div.remove()
