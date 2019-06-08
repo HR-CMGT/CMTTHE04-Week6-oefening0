@@ -1,5 +1,7 @@
 # CMTTHE04 Week6 oefening 1
 
+Pak alle pokéballs op voordat de tijd op is!
+
 Oefenen met het verwijderen van objecten. Je moet zowel DOM elementen als instances verwijderen.
 
 ## Ball klikbaar maken
