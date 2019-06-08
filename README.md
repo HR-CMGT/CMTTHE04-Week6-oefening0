@@ -1,6 +1,6 @@
-# CMTTHE04 Week6 oefening 0
+# CMTTHE04 Week6 oefening 1
 
-Oefenen met het verwijderen van objecten. Je moet zowel het DOM element als de ball instance in de array verwijderen.
+Oefenen met het verwijderen van objecten. Je moet zowel DOM elementen als instances verwijderen.
 
 ## Ball klikbaar maken
 
