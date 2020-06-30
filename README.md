@@ -37,7 +37,7 @@ Probeer met onderstaande voorbeeldcode de opdracht af te maken:
 Omdat de ball een functie van de game moet aanroepen, moet de ball ook weten dat de game bestaat. Je kan dit doen door de game via de constructor aan de ball te geven. Let op dat je bij het aanroepen van `new Ball()` hier gebruik van maakt!
 
 **ball.ts**
-```
+```typescript
 class Ball {
     game:Game
     constructor(g:Game){
@@ -48,11 +48,18 @@ class Ball {
 
 ### Object uit array verwijderen
 
-- Vind de plek van het object in een array
-- Gebruik `splice` om de array op die plek aan te passen:
+- Gebruik de **filter** functie om objecten uit een array te verwijdern
 
+```typescript
+this.balls = this.balls.filter(b => b!==removedBall)
 ```
-let index = this.balls.indexOf(ball)
+
+In ES5 kan je **indexof** en **splice** gebruiken:
+
+- Vind de plek van het object in een array, gebruik `splice` om de array op die plek aan te passen:
+
+```typescript
+const index = this.balls.indexOf(ball)
 this.balls.splice(index, 1);
 ```
 
